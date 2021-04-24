@@ -5,7 +5,7 @@ const Index = () => {
     <View>
       <Text>用户中心页面</Text>
     </View>
-  );
-};
+  )
+}
 
 export default Index;

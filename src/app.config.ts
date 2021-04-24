@@ -11,16 +11,20 @@ export default {
   },
   tabBar: {
     backgroundColor: '#fff',
-    color: '#000',
-    selectedColor: '#206d5e',
+    color: '#8a8a8a',
+    selectedColor: '#5e5e5e',
     list: [
       {
         text: '首页',
-        pagePath: 'pages/index/index'
+        pagePath: 'pages/index/index',
+        iconPath: 'assets/home-0.png',
+        selectedIconPath: 'assets/home.png'
       },
       {
-        text: '我的',
-        pagePath: 'pages/user/index'
+        text: '统计',
+        pagePath: 'pages/user/index',
+        iconPath: 'assets/chart-0.png',
+        selectedIconPath: 'assets/chart.png'
       }
     ]
   }

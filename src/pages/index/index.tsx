@@ -1,24 +1,26 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
+import React from 'react'
+import Taro from '@tarojs/taro'
+import { View, Button, Checkbox, Text } from '@tarojs/components'
 import './index.less'
 
-export default class Index extends Component {
+const Index: React.FC = () => {
 
-  componentWillMount () { }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  render () {
-    return (
-      <View className='index'>
-        <Text>Hello world!</Text>
-      </View>
-    )
+  const doQRScan = () => {
+    Taro.scanCode({
+      onlyFromCamera: true,
+    }).then(result => {
+      console.log('result', result)
+    })
   }
-}
+
+  return (
+    <View className='home-box'>
+      <Button onClick={doQRScan}>
+        <Text>扫码</Text>
+      </Button>
+      <Checkbox value='10'>点我完成</Checkbox>
+    </View>
+  );
+};
+
+export default Index;
