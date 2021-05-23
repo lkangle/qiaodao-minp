@@ -1,30 +1,39 @@
 export default {
   pages: [
     'pages/index/index',
-    'pages/user/index'
+    'pages/home/index',
+    'pages/table/index',
   ],
   window: {
+    backgroundColor: "#f5f5f5",
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
   },
   tabBar: {
+    // borderStyle: 'white',
     backgroundColor: '#fff',
-    color: '#8a8a8a',
-    selectedColor: '#5e5e5e',
+    color: '#646a73',
+    selectedColor: '#3370ff',
     list: [
       {
-        text: '首页',
+        text: '打卡',
         pagePath: 'pages/index/index',
-        iconPath: 'assets/home-0.png',
-        selectedIconPath: 'assets/home.png'
+        iconPath: 'assets/icons/mark.png',
+        selectedIconPath: 'assets/icons/mark-active.png'
       },
       {
         text: '统计',
-        pagePath: 'pages/user/index',
-        iconPath: 'assets/chart-0.png',
-        selectedIconPath: 'assets/chart.png'
+        pagePath: 'pages/table/index',
+        iconPath: 'assets/icons/table.png',
+        selectedIconPath: 'assets/icons/table-active.png'
+      },
+      {
+        text: '主页',
+        pagePath: 'pages/home/index',
+        iconPath: 'assets/icons/home.png',
+        selectedIconPath: 'assets/icons/home-active.png'
       }
     ]
   }

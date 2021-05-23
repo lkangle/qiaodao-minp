@@ -1,0 +1,42 @@
+@import "src/global";
+@avatar-size: 115px;
+
+.user-info {
+  height: 168px;
+  width: 100%;
+  background-color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+
+  .avatar {
+    width: @avatar-size;
+    height: @avatar-size;
+    border-radius: 50%;
+    overflow: hidden;
+    & > image, & > .word-ava {
+      width: 100%;
+      height: 100%;
+    }
+    & > .word-ava {
+      text-align: center;
+      line-height: @avatar-size;
+      color: #f1f1f1;
+      background-color: #8f53f7;
+    }
+  }
+
+  .info {
+    padding-left: 25px;
+
+    view {
+      font-size: .9rem;
+    }
+
+    text {
+      font-size: .8rem;
+      color: @grey-100;
+    }
+  }
+}

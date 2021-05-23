@@ -1,24 +1,30 @@
 import React from 'react'
-import Taro from '@tarojs/taro'
-import { View, Button, Checkbox, Text } from '@tarojs/components'
+import {
+  useDidShow,
+  setNavigationBarTitle
+} from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import { getWeekDate } from '../../utils/tools'
 import './index.less'
+import UserInfo from '../../components/UserInfo/index'
+import { AVATAR_URL, TASKS } from '../../utils/mock'
+import MarkTask from '../../components/MarkTask'
 
 const Index: React.FC = () => {
-
-  const doQRScan = () => {
-    Taro.scanCode({
-      onlyFromCamera: true,
-    }).then(result => {
-      console.log('result', result)
+  useDidShow(async () => {
+    await setNavigationBarTitle({
+      title: getWeekDate()
     })
-  }
+  })
 
   return (
     <View className='home-box'>
-      <Button onClick={doQRScan}>
-        <Text>扫码</Text>
-      </Button>
-      <Checkbox value='10'>点我完成</Checkbox>
+      <UserInfo nickName='李康乐' avatarUrl={AVATAR_URL} />
+      <View className='today-task'>
+        日常学习考勤
+      </View>
+      {/*<MarkEmpty />*/}
+      <MarkTask tasks={TASKS} />
     </View>
   );
 };
