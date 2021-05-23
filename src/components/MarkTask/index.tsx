@@ -23,22 +23,21 @@ const MarkTask: React.FC<Props> = (props) => {
     if (status === TaskStatus.DONE) {
       return (
         <View className='card-body__done'>
-          <View>{task.name}</View>
-          <Text>打卡时间: {task.markTime}</Text>
+          <View className='title'>{task.name}</View>
+          <Text className='subtitle'>打卡时间: {task.markTime}</Text>
         </View>
       )
     }
     if (status === TaskStatus.PROGRESS) {
       return (
         <View className='card-body__progress'>
-          <View>{task.name}</View>
+          <View className='title'>{task.name}</View>
           <View className='time'>{time}</View>
-          <View>
-            <Button
-              type='primary'
-              onClick={() => doOnMark(task)}
-            >打卡签到</Button>
-          </View>
+          <Button
+            className='btn'
+            type='primary'
+            onClick={() => doOnMark(task)}
+          >打卡签到</Button>
         </View>
       )
     }

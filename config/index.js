@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'qiandao-minp',
   date: '2021-4-23',
@@ -17,6 +19,9 @@ const config = {
     ],
     options: {
     }
+  },
+  alias: {
+    "@/src": path.resolve(__dirname, '../src')
   },
   framework: 'react',
   mini: {

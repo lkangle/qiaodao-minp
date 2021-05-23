@@ -1,10 +1,11 @@
-@import "src/global";
+@import "/src/global";
 @avatar-size: 115px;
 
 .user-info {
   height: 168px;
   width: 100%;
   background-color: #ffffff;
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
@@ -15,7 +16,7 @@
     height: @avatar-size;
     border-radius: 50%;
     overflow: hidden;
-    & > image, & > .word-ava {
+    & > .img-ava, & > .word-ava {
       width: 100%;
       height: 100%;
     }
@@ -30,11 +31,11 @@
   .info {
     padding-left: 25px;
 
-    view {
+    .info-title {
       font-size: .9rem;
     }
 
-    text {
+    .info-subtitle {
       font-size: .8rem;
       color: @grey-100;
     }

@@ -1,4 +1,4 @@
-@import "src/global";
+@import "/src/global";
 @box-padding: 28px;
 @margin: 35px;
 @point-size: 16px;
@@ -42,12 +42,12 @@
     background-color: #fff;
     padding: @box-padding;
 
-    view {
+    .title {
       font-size: .76rem;
       color: @grey;
     }
 
-    text {
+    .subtitle {
       display: block;
       font-size: .9rem;
       margin-top: 15px;
@@ -58,7 +58,7 @@
   .card-body__progress {
     background-color: #fff;
     padding: @box-padding;
-    view {
+    .title {
       font-size: .76rem;
       color: @grey;
       text-align: center;
@@ -68,13 +68,13 @@
       color: #000;
       font-size: 1.8rem;
       margin: 2Px 0;
+      text-align: center;
     }
 
-    //button {
-    //  display: inline-block;
-    //  border-radius: 30PX;
-    //  padding: 0 40PX;
-    //}
+    .btn {
+      border-radius: 30PX;
+      padding: 0 40PX;
+    }
   }
 
   .card-body__unplay {

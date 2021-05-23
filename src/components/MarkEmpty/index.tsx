@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, View } from '@tarojs/components'
+import Tea from './tea.png'
 
 const MarkEmpty: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const MarkEmpty: React.FC = () => {
       <Image style={{
         width: "150rpx",
         height: "150rpx"
-      }} src={require("./tea.png")}
+      }} src={Tea}
       />
       <View style={{
         fontSize: ".85rem",

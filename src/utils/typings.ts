@@ -28,3 +28,15 @@ export interface Task {
   // 签到地点
   markLocation?: string
 }
+
+export interface CalendarItem {
+  day: number
+  date: Date
+  current: boolean
+}
+
+export interface ControlMethod {
+  nextMonth: VoidFunction
+  prevMonth: VoidFunction
+  backToday: VoidFunction
+}

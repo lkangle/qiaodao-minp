@@ -1,0 +1,87 @@
+@import "/src/global";
+@space: 14px;
+
+.calendar-box {
+  background-color: #fff;
+
+  .calendar-control {
+    display: flex;
+    justify-content: space-between;
+
+    .back {
+      padding: 10px 35px;
+      font-size: 10Px;
+
+      .back-text {
+        display: inline-block;
+        width: 20Px;
+        height: 20Px;
+        line-height: 20Px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: @light-blue;
+        color: #ced1d6;
+      }
+    }
+
+    .pn {
+      display: flex;
+      justify-content: flex-end;
+      font-size: .88rem;
+      padding: 10px 12px;
+      color: #4a4a4a;
+
+      &>.pn-text {
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+        color: @grey-100;
+      }
+    }
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-around;
+    padding: @space + 8px 0 @space;
+
+    .calendar-header__item {
+      font-size: .8rem;
+      color: #919191;
+      width: 10%;
+      text-align: center;
+    }
+  }
+
+  .calendar-content {
+    display: flex;
+    flex-direction: column;
+
+    .calendar-date {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: @space 0;
+
+      & > .calendar-item {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        color: #2b2b2b;
+        font-size: .73rem;
+        border-radius: 50%;
+      }
+
+      .calendar-item__selected {
+        color: #fff;
+        background-color: @blue-100;
+      }
+
+      .calendar-item__current {
+        color: @blue;
+        background-color: @light-blue;
+      }
+    }
+  }
+}

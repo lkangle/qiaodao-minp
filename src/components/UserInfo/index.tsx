@@ -20,7 +20,7 @@ const UserInfo: React.FC<Props> = (props) => {
   return (
     <View className='user-info'>
       <View className='avatar'>
-        {avatarUrl && <Image src={avatarUrl} />}
+        {avatarUrl && <Image className='img-ava' src={avatarUrl} />}
         {
           !avatarUrl &&
           <View className='word-ava'>
@@ -29,8 +29,8 @@ const UserInfo: React.FC<Props> = (props) => {
         }
       </View>
       <View className='info'>
-        <View>你好，{name}</View>
-        <Text>{markInfo || '暂无签到任务'}</Text>
+        <View className='info-title'>你好，{name}</View>
+        <Text className='info-subtitle'>{markInfo || '暂无签到任务'}</Text>
       </View>
     </View>
   )
