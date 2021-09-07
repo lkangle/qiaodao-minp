@@ -1,0 +1,53 @@
+@import "/src/global";
+@box-padding: 28px;
+@margin: 35px;
+@point-size: 16px;
+
+.card-line {
+  display: flex;
+  flex-direction: column;
+  width: @margin + @point-size;
+
+  .step-point {
+    width: @point-size;
+    height: @point-size;
+    border-radius: 50%;
+  }
+
+  .line__top {
+    margin-left: @point-size / 2;
+    height: 37px;
+    border-left: 1PX #d3d3d3 solid;
+  }
+
+  .line__bottom {
+    flex-grow: 1;
+    margin-left: @point-size / 2;
+    border-left: 1PX #d3d3d3 solid;
+  }
+}
+
+.card {
+  display: flex;
+  margin: 0 @margin;
+
+  .card-body__normal {
+    background-color: #fff;
+    padding: @box-padding;
+    flex-grow: 1;
+    border-radius: 5PX;
+    margin-bottom: 30px;
+
+    .title {
+      font-size: .76rem;
+      color: @grey;
+    }
+
+    .subtitle {
+      display: block;
+      font-size: .9rem;
+      margin-top: 15px;
+      color: #252525;
+    }
+  }
+}

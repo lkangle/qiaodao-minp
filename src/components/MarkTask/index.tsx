@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Text, View } from '@tarojs/components'
-import './task.less'
 import { Task, TaskStatus } from '../../utils/typings'
-import Line from './Line'
 import useTime from '../../hooks/useTime'
+import TimeLine from '../TimeLine'
+import './task.less'
 
 interface Props {
   tasks: Task[]
@@ -11,7 +11,6 @@ interface Props {
 
 const MarkTask: React.FC<Props> = (props) => {
   const { tasks } = props
-  const length = tasks.length
   const [time] = useTime()
 
   const doOnMark = (task) => {
@@ -51,21 +50,8 @@ const MarkTask: React.FC<Props> = (props) => {
   }
 
   return (
-    <View>
-      {
-        tasks.map((task, index) => {
-          return (
-            <View className='card' key={index}>
-              <Line
-                active={task.status === TaskStatus.PROGRESS}
-                top={index === 0}
-                bottom={index === length - 1}
-              />
-              {getCardBody(task)}
-            </View>
-          )
-        })
-      }
+    <View className='mark-task'>
+      <TimeLine tasks={tasks} renderCardBody={getCardBody} />
     </View>
   )
 }

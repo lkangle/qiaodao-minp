@@ -21,3 +21,14 @@ export const TASKS: Task[] = [
     status: TaskStatus.UN_PLAYED
   }
 ]
+
+export const RECORD_TASKS = [
+  {
+    name: '上课',
+    content: '打卡时间: 16:11'
+  },
+  {
+    name: '下课',
+    markTime: '20:00'
+  }
+]

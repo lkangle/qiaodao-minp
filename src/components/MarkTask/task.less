@@ -3,34 +3,7 @@
 @margin: 35px;
 @point-size: 16px;
 
-.card-line {
-  display: flex;
-  flex-direction: column;
-  width: @margin + @point-size;
-
-  .step-point {
-    width: @point-size;
-    height: @point-size;
-    border-radius: 50%;
-  }
-
-  .line__top {
-    margin-left: @point-size / 2;
-    height: 37px;
-    border-left: 1PX #d3d3d3 solid;
-  }
-
-  .line__bottom {
-    flex-grow: 1;
-    margin-left: @point-size / 2;
-    border-left: 1PX #d3d3d3 solid;
-  }
-
-}
-
-.card {
-  display: flex;
-  margin: 0 @margin;
+.mark-task {
 
   [class^=card-body__] {
     flex-grow: 1;

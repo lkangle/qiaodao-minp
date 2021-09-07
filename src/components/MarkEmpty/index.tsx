@@ -11,8 +11,8 @@ const MarkEmpty: React.FC = () => {
     }}
     >
       <Image style={{
-        width: "150rpx",
-        height: "150rpx"
+        width: "145rpx",
+        height: "145rpx"
       }} src={Tea}
       />
       <View style={{

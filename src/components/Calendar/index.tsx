@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { View, Text } from '@tarojs/components'
 import './calendar.less'
 import { CalendarItem, ControlMethod } from '../../utils/typings'
@@ -25,10 +25,18 @@ function getItemClass(item: CalendarItem, selected: Date, now: Date): string {
 }
 
 interface Props {
+  // 初始化当前选中的值
   value?: Date
+  // 选中的值变化时触发
   onChange?: (value: Date) => void
+  // 是否显示控制条
   control?: boolean
+  // 向外暴露的控制方法
   controlMethods?: ControlMethod
+  // 时间头像旁边显示的name值，默认无
+  name?: string
+  // 渲染日历上边的统计内容
+  statContent?: (year: number, month: number) => React.ReactNode
 }
 
 const Calendar: React.FC<Props> = (props) => {
@@ -36,7 +44,9 @@ const Calendar: React.FC<Props> = (props) => {
     control = true,
     value,
     onChange,
-    controlMethods
+    controlMethods,
+    name = '',
+    statContent
   } = props
   const now = useRef(new Date())
   // 显示的月份
@@ -56,6 +66,11 @@ const Calendar: React.FC<Props> = (props) => {
   useEffect(() => {
     value && setSelected(value)
   }, [value])
+
+  const yearMonthStr = useMemo(() => formatDate(selected).substring(0, 7), [selected])
+  const statisticsNode = useMemo(() => (
+    statContent?.(selected.getFullYear(), selected.getMonth() + 1)
+  ), [yearMonthStr])
 
   const onItemClick = (item: CalendarItem) => {
     if (item) {
@@ -103,19 +118,25 @@ const Calendar: React.FC<Props> = (props) => {
       {control && (
         <View className='calendar-control'>
           <View onClick={backToday} className='back'>
-            <Text className='back-text'>TD</Text>
+            <Text className='back-text'>16</Text>
+            <Text className='back-name'>{name}</Text>
           </View>
           <View className='pn'>
             <Text
               className='pn-text'
               onClick={prevMonth}
             >&lt;</Text>
-            <View>{formatDate(selected).substring(0, 7)}</View>
+            <View>{yearMonthStr}</View>
             <Text
               className='pn-text'
               onClick={nextMonth}
             >&gt;</Text>
           </View>
+        </View>
+      )}
+      {statContent && (
+        <View className='calendar-statistics'>
+          {statisticsNode}
         </View>
       )}
       <View className='calendar-header'>

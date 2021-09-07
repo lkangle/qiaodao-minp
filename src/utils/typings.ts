@@ -19,12 +19,15 @@ export enum TaskStatus {
 export interface Task {
   // 任务名称
   name: string
-  // 打开任务类型
-  type: TaskType
-  // 任务状态
-  status: TaskStatus
   // 签到时间
   markTime?: string
+  // 用来展示的内容
+  content?: string
+
+  // 打卡任务类型
+  type?: TaskType
+  // 任务状态
+  status?: TaskStatus
   // 签到地点
   markLocation?: string
 }
